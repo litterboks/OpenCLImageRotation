@@ -116,7 +116,7 @@ int main(void)
 
 	unsigned int nRotationPointX = nWidth / 2;
 	unsigned int nRotationPointY = nHeight / 2;
-	int degree = 180;
+	int degree = 45;
 	float theta = degree * M_PI / 180;
 	float sinTheta = sin(theta);
 	float cosTheta = cos(theta);

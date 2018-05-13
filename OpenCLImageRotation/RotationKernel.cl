@@ -19,6 +19,6 @@ __kernel void image_rotate(	__global Pixel* src_data, __global Pixel* dest_data,
 	// assign the new coordinates
 	if ((((int)xpos >= 0) && ((int)xpos < W)) && (((int)ypos >= 0) && ((int)ypos < H)))
 	{
-		dest_data[iy*W + ix] = src_data[(int)floor(ypos*W + xpos)];
+		dest_data[iy*W + ix] = src_data[(int)(floor(ypos)*W + floor(xpos))];
 	}
 }
