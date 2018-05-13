@@ -48,12 +48,13 @@ int main(void)
 
 	// get platforms
 	cl_platform_id platforms[MAX_NUM_PLATFORMS];			// array for platforms
-	cl_uint numPlatforms;									// number of platforms
-	char platformName[MAX_LENGTH_PLATFORM_NAME];			// destination array for platform name
-	size_t sizeRet;											// actual length of platform name
-	ciErrNum = clGetPlatformIDs(64, platforms, &numPlatforms); // get them
+	cl_uint numPlatforms;									// number of platforms#
+	ciErrNum = clGetPlatformIDs(64, platforms, &numPlatforms); // get the platforms
 
 	/*
+	char platformName[MAX_LENGTH_PLATFORM_NAME];			// destination array for platform name
+	size_t sizeRet;											// actual length of platform name
+
 	// print a list of all platforms
 	printf("Platforms:\n");
 	for (unsigned int i = 0; i < numPlatforms; ++i)
@@ -116,7 +117,7 @@ int main(void)
 
 	unsigned int nRotationPointX = nWidth / 2;
 	unsigned int nRotationPointY = nHeight / 2;
-	int degree = 45;
+	int degree = 32;
 	float theta = degree * M_PI / 180;
 	float sinTheta = sin(theta);
 	float cosTheta = cos(theta);
@@ -143,7 +144,7 @@ int main(void)
 	std::vector<unsigned char> outputImage;
 
 	j = 0;
-	for (int i = 0; i < nArraySize * 3; i += nNumChannels)
+	for (unsigned int i = 0; i < nArraySize * 3; i += nNumChannels)
 	{
 		outputImage.push_back(imageDataOutput[j].R);
 		outputImage.push_back(imageDataOutput[j].G);
